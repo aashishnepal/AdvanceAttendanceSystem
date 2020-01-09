@@ -1,0 +1,86 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+
+<h1 class="col-md-6 offset-md-3">Login</h1>
+<div class="col-md-6 offset-md-3">
+    <form action= "home"  method="POST">{% csrf_token %}
+        <div class="form-group">
+            
+
+            <input type="text" class="form-control" placeholder="Enter Username" name="username">
+
+        </div>
+        <div class="form-group">
+
+            <input type="password" class="form-control" placeholder="Enter Password" name="password">
+        </div>
+
+
+        <hr>
+        <button type="submit" class="btn btn-danger">Login</button>
+        <hr>
+        
+        <hr>
+
+    </form>
+    <div>
+    
+    
+        <form action="student_table" method="POST">{% csrf_token %}
+            <h2 class="col-md-6 offset-md-3">View as student</h2>
+            <input type="text" class="form-control" placeholder="Enter Student Roll No." name="fullname"> 
+            
+            <button type="submit" class="btn btn-danger">view</button>
+        </form>    
+
+
+    </div> 
+
+</div>
+
+{% endblock %}
+
+
+{##}
+{#{% block content %}#}
+{##}
+{##}
+{#    {% load static %}#}
+
+{##}
+{#    <div #rcorners1 id="rcorners1">#}
+{#        <p>LOGIN</p>#}
+{#        <div class="login-container">#}
+{#            <form action="home" method="POST">#}
+{#                {% csrf_token %}#}
+{##}
+{#                Username <input type="text" name="username">#}
+{#                Password <input type="password" name="password">#}
+{##}
+{##}
+{#                Login Here#}
+{#                <button type="Submit"> Login me</button>#}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#        <div>#}
+{##}
+{#            {% for message in messages %}#}
+{#                <h3> {{ message }} </h3>#}
+{#            {% endfor %}#}
+{##}
+{#        </div>#}
+{##}
+{##}
+{#        <p><b><a href="default" target="_self"> Forget Password?</a></b></p>#}
+{#    </div>#}
+{##}
+{##}
+{#    </body>#}
+{#    </html>#}
+{##}
+{##}
+{##}
+{#{% endblock content %}#}

@@ -1,0 +1,126 @@
+{% extends 'nav.html' %}
+
+
+{% block content %}
+
+
+
+        <div class="container">
+            {% if user.is_authenticated %}
+                {% csrf_token %}
+                <header class="jumbotron my-2">
+                    <h1 class="display-8 text-capitalize">Welcome {{ user.username }}</h1>
+
+                </header>
+        </div>
+
+
+
+                     <div class="row text-center">
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+
+                                <img class="card-img-top"
+                                     src="../static/images/bluetooth.jpg"
+                                     alt="">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Bluetooth</h4>
+                                    <p class="card-text">
+                                        Turn on bluetooth to take attendance
+                                    <div class="card-footer">
+
+                                    </div>
+                                    <a href="{% url 'blue' %}">
+                                        <button type="button" class="btn btn-primary btn-lg"
+                                        >Turn Bluetooth on</button>
+                                    </a></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+
+                                <img class="card-img-top"
+                                     src="../static/images/refresh2.webp"
+                                     alt="">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Refresh</h4>
+                                    <p class="card-text">
+                                        Click to Refresh the present students
+                                    <div class="card-footer">
+
+                                    </div>
+                                    <a href="{% url 'refresh' %}">
+                                        <button type="button" class="btn btn-success btn-lg"
+                                        >Refresh</button>
+                                    </a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+
+                                <img class="card-img-top"
+                                     src="../static/images/attendance.jpg"
+                                     alt="">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Attendance</h4>
+                                    <p class="card-text">
+                                        Show the attendance table
+                                    <div class="card-footer">
+
+                                    </div>
+                                    <a href="{% url 'attendance' %}">
+                                        <button type="button" class="btn btn-danger btn-lg"
+                                        >View Attendance</button>
+                                    </a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                                                <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+
+                                <img class="card-img-top"
+                                     src="../static/images/total.jpg"
+                                     alt="">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Total Present Days</h4>
+                                    <p class="card-text">
+                                        Show the Attendance Table
+                                    <div class="card-footer">
+
+                                    </div>
+                                    <a href="{% url 'records' %}">
+                                        <button type="button" class="btn btn-danger btn-lg"
+                                        >View Present Days</button>
+                                    </a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+            {% else %}
+
+
+                <a href="{% url 'login' %}">Please login here </a>
+
+            {% endif %}
+
+
+
+
+
+{% endblock content %}
